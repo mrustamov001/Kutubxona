@@ -1,0 +1,55 @@
+### Yangi barrower qushish uchun API
+POST http://localhost:7000/borrowers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+Content-Type: application/json
+
+{
+    "full_name": "Schema",
+    "address": "toshkent",
+    "phone": "1234567890123"
+}
+
+
+### Borrowers ro'yxatini olish uchun API
+GET http://localhost:7000/borrowers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Search qilish (?q=palon) full_name ga ko'ra
+GET http://localhost:7000/borrowers/?q=test
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Sort qilish (?sort[by]=palon&sort[order]=desc) full_name yoki phone ma'lumotlariga ko'ra
+GET http://localhost:7000/borrowers/?sort[by]=phone&sort[order]=asc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Filterlash (filters[is_deleted]=true) is_deleted maydonlariga ko'ra
+GET http://localhost:7000/borrowers/?filters[is_deleted]=true
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Borrowers ro'yhatini paginatsiyalash
+GET http://localhost:7000/borrowers/?page[offset]=2&page[limit]=4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Bitta borrower ko'rish uchun API
+GET http://localhost:7000/borrowers/64c4a19c9331b4254a0e6938
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Borrowerni ma'lumotini tahrirlash uchun API
+PATCH http://localhost:7000/borrowers/64c4a19c9331b4254a0e6938
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+Content-Type: application/json
+
+{
+    "full_name": "Muhammadziyo1 edit"
+}
+
+
+### Barrowerni o'chirish uchun API
+DELETE http://localhost:7000/borrowers/64c4b12709f8d7c319a6af44
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI

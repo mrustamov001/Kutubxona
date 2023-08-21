@@ -1,0 +1,36 @@
+### Yangi Loan qushish uchun API, (due_date: "year-month-day")
+POST http://localhost:7000/loans
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+Content-Type: application/json
+
+{
+    "book": "64c4fcb2e692f4514681d15f",
+    "admin": "64c55854b9ce0bb3c1cba2ad",
+    "due_date": "2023-04-02",
+    "borrower": "64c4c04b9a97c09e2fcad271"
+}
+
+
+### Loans ro'yxatini olish uchun API
+GET http://localhost:7000/loans
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Sort qilish (?sort[by]=palon&sort[order]=desc) out_date, due_date ga ko'ra
+GET http://localhost:7000/loans/?sort[by]=due_date&sort[order]=desc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Filterlash (filters[is_deleted]=true) admin, book maydonlariga ko'ra
+GET http://localhost:7000/loans/?filters[admin]=64c55854b9ce0bb3c1cba2ad
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Loans ro'yhatini paginatsiyalash
+GET http://localhost:7000/loans/?page[offset]=1&page[limit]=10
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Bitta Loan ko'rish uchun API
+GET http://localhost:7000/loans/64c542a23925300358fd88d3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI

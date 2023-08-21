@@ -1,0 +1,56 @@
+### Yangi Book qushish uchun API
+POST http://localhost:7000/books
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+Content-Type: application/json
+
+{
+    "title": "Olamlar Aro",
+    "publisher": "64c4cb9d72b02776d14d8e78",
+    "author": "64c4d5ea745cd82658b0b081",
+    "copies": 201
+}
+
+
+### Books ro'yxatini olish uchun API
+GET http://localhost:7000/books
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Search qilish (?q=palon) title ga ko'ra
+GET http://localhost:7000/books/?q=Jo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Sort qilish (?sort[by]=palon&sort[order]=desc) copiesga ko'ra
+GET http://localhost:7000/books/?sort[by]=copies&sort[order]=desc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Filterlash (filters[is_deleted]=true) is_deleted, publisher, author maydonlariga ko'ra
+GET http://localhost:7000/books/?filters[is_deleted]=true
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Books ro'yhatini paginatsiyalash
+GET http://localhost:7000/books/?page[offset]=2&page[limit]=2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Bitta book ko'rish uchun API
+GET http://localhost:7000/books/64c4fc6ce692f4514681d159
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Borrowerni ma'lumotini tahrirlash uchun API
+PATCH http://localhost:7000/books/64c4fcb2e692f4514681d15f
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+Content-Type: application/json
+
+{
+    "title": "test_edit"
+}
+
+
+### Authorni o'chirish uchun API
+DELETE http://localhost:7000/books/64c4fca6e692f4514681d15d
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI

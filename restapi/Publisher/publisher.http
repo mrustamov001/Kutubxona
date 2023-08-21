@@ -1,0 +1,55 @@
+### Yangi Publisher qushish uchun API
+POST http://localhost:7000/publishers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+Content-Type: application/json
+
+{
+    "name": "test",
+    "address": "toshkent",
+    "phone": "1234567890123"
+}
+
+
+### Publishers ro'yxatini olish uchun API
+GET http://localhost:7000/publishers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Search qilish (?q=palon) name ga ko'ra
+GET http://localhost:7000/publishers/?q=test
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Sort qilish (?sort[by]=palon&sort[order]=desc) namega ko'ra
+GET http://localhost:7000/publishers/?sort[by]=name&sort[order]=desc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Filterlash (filters[is_deleted]=true) is_deleted maydonlariga ko'ra
+GET http://localhost:7000/publishers/?filters[is_deleted]=true
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Publishers ro'yhatini paginatsiyalash
+GET http://localhost:7000/publishers/?page[offset]=1&page[limit]=4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Bitta borrower ko'rish uchun API
+GET http://localhost:7000/publishers/64c4cb9d72b02776d14d8e78
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Borrowerni ma'lumotini tahrirlash uchun API
+PATCH http://localhost:7000/publishers/64c4cb9d72b02776d14d8e78
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+Content-Type: application/json
+
+{
+    "name": "Schema_edit"
+}
+
+
+### Publisherni o'chirish uchun API
+DELETE http://localhost:7000/publishers/64c4cbae72b02776d14d8e7b
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI

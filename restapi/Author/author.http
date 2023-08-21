@@ -1,0 +1,53 @@
+### Yangi Author qushish uchun API
+POST http://localhost:7000/authors
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+Content-Type: application/json
+
+{
+    "name": "test3"
+}
+
+
+### Authors ro'yxatini olish uchun API
+GET http://localhost:7000/authors
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Search qilish (?q=palon) name ga ko'ra
+GET http://localhost:7000/authors/?q=test
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Sort qilish (?sort[by]=palon&sort[order]=desc) name ga ko'ra
+GET http://localhost:7000/authors/?sort[by]=name&sort[order]=desc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Filterlash (filters[is_deleted]=true) is_deleted maydonlariga ko'ra
+GET http://localhost:7000/authors/?filters[is_deleted]=false
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Authors ro'yhatini paginatsiyalash
+GET http://localhost:7000/authors/?page[offset]=1&page[limit]=3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Bitta author ko'rish uchun API
+GET http://localhost:7000/authors/64c4d604745cd82658b0b085
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+
+
+### Author ma'lumotini tahrirlash uchun API
+PATCH http://localhost:7000/authors/64c4d604745cd82658b0b085
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
+Content-Type: application/json
+
+{
+    "name": "test_edit"
+}
+
+
+### Authorni o'chirish uchun API
+DELETE http://localhost:7000/authors/64c4d600745cd82658b0b083
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjM2ZmZDNhZjM5YTU3OTE3MTk0MjdiIiwiaXNfc3VwZXIiOnRydWV9LCJpYXQiOjE2OTA2MDM5MzEsImV4cCI6MTY5MDY5MDMzMX0.e02pnykgs5bZOkpdjsxS3txqz_NbQXzKx8BfS608vvI
